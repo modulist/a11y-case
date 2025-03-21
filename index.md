@@ -13,9 +13,8 @@ By making these arguments available to anyone, we hope to reframe accessibility 
 ## Table of Contents
 
 - [Overview](./_pages/overview.md)
-- [An accessible business is a prosperous business](./_pages/the_bsuiness_case.md)
+- [An accessible business is a prosperous business](./_pages/the_business_case.md)
 - [Accessibility is quality](./_pages/accessibility_is_quality.md)
-- [The moral case:](./_pages/the_moral_case.md)
 - [Accessibility is the right thing to do,](./_pages/the_right_thing_to_do.md)
 - [Disabled people as a resource](./_pages/disabled_people_as_a_resource.md)
 - [There is help and there are incentives](./_pages/there_is_help_and_there_are_incentives.md)
