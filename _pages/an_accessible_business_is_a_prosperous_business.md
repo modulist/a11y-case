@@ -21,7 +21,7 @@ https://www.air.org/resource/report/hidden-market-purchasing-power-working-age-a
 People with Disabilities are far more likely to purchase from an accessible company. It is faster, more convenient, and they don’t need to seek assistance to make a purchase.
 
 
-        The frustration caused by lack of accessibility has caused many a disabled person to abandon a purchase halfway through.
+The frustration caused by the lack of accessibility has caused many a disabled person to abandon a purchase halfway through.
 
 
 ## People with disabilities often influence the purchasing decisions of friends and family.
