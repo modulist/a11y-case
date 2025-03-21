@@ -24,7 +24,8 @@ Even if the executive branch of the US government selectively enforces existing 
 
 
 ### For further reading:
-**[Recent Executive Orders on DEI Do Not Change Digital Accessibility Requirements](https://www.google.com/url?q=https://www.levelaccess.com/blog/digital-accessibility-in-2025-q1-update/&sa=D&source=editors&ust=1742577216132335&usg=AOvVaw2M8b9Hlpbb30VpbKg2bhuH) **
+**[Recent Executive Orders on DEI Do Not Change Digital Accessibility Requirements](https://www.google.com/url?q=https://www.levelaccess.com/blog/digital-accessibility-in-2025-q1-update/&sa=D&source=editors&ust=1742577216132335&usg=AOvVaw2M8b9Hlpbb30VpbKg2bhuH)**
+
 This article from Level Access explains how the shift in priorities do not change the obligations of organizations outside the US Executive.
 
 
