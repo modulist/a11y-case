@@ -67,5 +67,5 @@ Among user experience (UX) professionals, it’s a fundamental fact that accessi
 For further reading:
 Microsoft Inclusive Design
 Microsoft
-Inclusive Design is a methodology born out of digital environments that enables and draws on the full range of human diversity.
-[https://inclusive.microsoft.design/]
+Inclusive Design is a methodology born out of digital environments that enables and draws on the full range of human diversity.  
+https://inclusive.microsoft.design/
