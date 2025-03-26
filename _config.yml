@@ -1,5 +1,5 @@
 title: A11y-case Toolkit
-theme: minima
+theme: zendesk
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
