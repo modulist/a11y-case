@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  
+  <!-- Preload assets -->
+  <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+  <link rel="preload" href="{{ '/assets/js/theme-switcher.js' | relative_url }}" as="script">
+  <link rel="preload" href="{{ '/assets/js/navigation.js' | relative_url }}" as="script">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  
+  <!-- Accessibility -->
+  <script>
+    // Apply saved theme before page renders to prevent flicker
+    (function() {
+      const savedTheme = localStorage.getItem('a11y-theme') || 'default';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Check for URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam) {
+        const validThemes = ['default', 'dark', 'quiet', 'high-contrast'];
+        if (validThemes.includes(themeParam)) {
+          document.documentElement.setAttribute('data-theme', themeParam);
+          localStorage.setItem('a11y-theme', themeParam);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="page-container">
+    {% include header.html %}
+    
+    <div class="content-container">
+      {% include sidebar.html %}
+      
+      <main id="main-content" tabindex="-1">
+        {{ content }}
+      </main>
+    </div>
+    
+    {% include footer.html %}
+  </div>
+  
+  <!-- Scripts -->
+  <script src="{{ '/assets/js/theme-switcher.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/navigation.js' | relative_url }}" defer></script>
+</body>
+</html>

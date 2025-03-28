@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moral Case for Accessibility | Accessibility Case Toolkit</title>
+  <meta name="description" content="Understanding the ethical and social importance of implementing accessibility in your products and services.">
+  
+  <!-- Preload assets -->
+  <link rel="preload" href="/assets/css/main.css" as="style">
+  <link rel="preload" href="/assets/js/theme-switcher.js" as="script">
+  <link rel="preload" href="/assets/js/navigation.js" as="script">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <!-- Accessibility -->
+  <script>
+    // Apply saved theme before page renders to prevent flicker
+    (function() {
+      const savedTheme = localStorage.getItem('a11y-theme') || 'default';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Check for URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam) {
+        const validThemes = ['default', 'dark', 'quiet', 'high-contrast'];
+        if (validThemes.includes(themeParam)) {
+          document.documentElement.setAttribute('data-theme', themeParam);
+          localStorage.setItem('a11y-theme', themeParam);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="page-container">
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <div class="site-title">
+          <a href="/index.html" aria-label="Home">The New Case for Accessibility</a>
+        </div>
+        
+        <div class="theme-controls">
+          <label for="theme-select" class="visually-hidden">Choose theme</label>
+          <select id="theme-select" aria-label="Select theme">
+            <option value="default">Default theme</option>
+            <option value="dark">Dark theme</option>
+            <option value="quiet">Quiet theme</option>
+            <option value="high-contrast">High contrast theme</option>
+          </select>
+          
+          <div class="theme-buttons" role="radiogroup" aria-label="Theme options">
+            <button id="theme-default" class="theme-button" aria-label="Default theme" data-theme="default" role="radio" aria-checked="true">A</button>
+            <button id="theme-dark" class="theme-button" aria-label="Dark mode" data-theme="dark" role="radio" aria-checked="false">A</button>
+            <button id="theme-quiet" class="theme-button" aria-label="Quiet mode" data-theme="quiet" role="radio" aria-checked="false">A</button>
+            <button id="theme-high-contrast" class="theme-button" aria-label="High contrast mode" data-theme="high-contrast" role="radio" aria-checked="false">A</button>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </header>
+    
+    <div class="content-container">
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="nav-container">
+          <h2 class="visually-hidden">Main Navigation</h2>
+          
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">
+                Overview
+              </a>
+            <li class="nav-item">
+              <a href="/business-case.html" class="nav-link">
+                Business Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/moral-case.html" class="nav-link" aria-current="page">
+                Moral Case
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="/social-model.html" class="nav-link active" aria-current="page">
+                The social model, updated.
+              </a>
+              <ul class="subnav-list">
+                <li class="subnav-item">
+                  <a href="#social-model" class="subnav-link">
+                    Accessibility barriers disable people at least as much as physical conditions.
+                  </a>
+                </li>
+                 <li class="subnav-item">
+                  <a href="#social-model" class="subnav-link">
+                    Accessibility barriers disable people at least as much as physical conditions.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#barrier-free" class="subnav-link">
+                    In a barrier-free world, disabled people would need little or no assistance.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#employability" class="subnav-link">
+                    Fewer barriers and more autonomy lead to greater employability.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#economic-conditions" class="subnav-link">
+                    Accessibility reduces dependence on social welfare programs.
+                  </a>
+                </li>
+               <li class="subnav-item">
+                  <a href="#reduces-burden" class="subnav-link">
+                    Accessibility reduces the burden on family and friends.
+                  </a>
+                </li>
+               </ul>
+            </li>
+            <li class="nav-item">
+              <a href="/legal-case.html" class="nav-link">
+                Legal Case
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <main id="main-content" tabindex="-1">
+        <article class="page">
+          <header class="page-header">
+            <h1>The social model, updated.</h1>
+          </header>
+        
+          <div class="page-content">
+
+            <section class="card" id="social-model">
+              <h2 class="card-title">Accessibility barriers disable people at least as much as physical conditions.</h2>
+             <div class="card-content">
+                <p>In the 1980s, a group of British disability activists stated that it is society that disables people. The world is built and designed for abled people, and thus the limitations on disabled people's abilities to perform everyday activities come from the built environment and societal systems.</p>
+                <p>With the coming of the internet, software in the workplace, and personal devices, it's become clear that the digital world also creates new barriers.</p>
+                <div class="further-reading" id="further-reading-economic-conditions">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-economic-conditions">
+                    <ul>
+                      <li>
+                        <a href="https://www.getstark.co/blog/the-social-model-do-we-disable-people-through-our-tech/" target="_blank" rel="noopener noreferrer">The social model: do we disable people through our tech?</a>
+                        <br>
+                        <em>Claudio Luis Vera</em><br>
+                        Do our society’s design and tech choices actually cause disabilities?  
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card" id="barrier-free">
+              <h2 class="card-title">In a barrier-free world, disabled people would need little or no assistance</h2>
+              <div class="card-content">
+                <p>With access to environments, vehicles, software, and digital experiences that work for them, people with disabilities would enjoy greater autonomy to perform everyday activities.</p>
+              </div>
+            </section>
+
+            <section class="card" id="employability">
+              <h2 class="card-title">Fewer barriers and more autonomy lead to greater employability.</h2>
+                <div class="card-content">
+                  <p>As barriers to workplace activities diminish, people with disabilities will be able to participate more with their abled counterparts and have equal footing in the workplace.</p>
+                </div>
+            </section>
+
+            <section class="card" id="economic-conditions">
+              <h2 class="card-title">Accessibility reduces dependence on social welfare programs.</h2>
+              <div class="card-content">
+                <p>With greater access to jobs, people with disabilities will be able to enjoy more economic autonomy. As a result, fewer will need supplemental income and other publicly-funded assistance.</p>
+
+                <div class="further-reading" id="further-reading-economic-conditions">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-economic-conditions">
+                    <ul>
+                      <li><a href="https://www.ssa.gov/policy/docs/ssb/v77n4/v77n4p27.html" target="_blank" rel="noopener noreferrer">Economic Conditions and Supplemental Security Income Application</a>
+                      <p><em>Social Security Office of Research, Evaluation, and Statistics</em><br>
+                        This report examines the direct correlation of disability unemployment levels to reliance on applications for disability insurance benefits.  
+                      </p></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card" id="reduces-burden">
+              <h2 class="card-title">Accessibility reduces the burden on family and friends.</h2>
+              <div class="card-content">
+                <p>People with disabilities, given an accessible environment, are far less likely to seek the assistance of family and friends when performing day-to-day tasks.</p>
+
+                <!-- <div class="further-reading" id="further-reading-economic-conditions">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-economic-conditions">
+                    <ul>
+                      <li><a href="" target="_blank" rel="noopener noreferrer"> </a>
+                      <p><em> </em><br>
+                          
+                      </p></li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+    </div>
+    
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="footer-heading">Accessibility Case Toolkit</h2>
+          <p>A toolkit for implementing accessibility in your projects and making the business, legal, and technical case for accessibility.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Links</h2>
+          <ul class="footer-links">
+            <li><a href="/accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="https://github.com/accessibility-toolkit" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Feedback</h2>
+          <p>Found an issue or have a suggestion? <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit feedback on GitHub</a>.</p>
+        </div>
+      </div>
+      
+      <div class="footer-meta">
+        <p>Last updated: March 26, 2025</p>
+        <p>&copy; 2025 Accessibility Case Toolkit. <span class="license">Content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> unless otherwise noted.</span></p>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/navigation.js" defer></script>
+  <script src="/assets/js/further-reading.js" defer></script>
+</body>
+</html>

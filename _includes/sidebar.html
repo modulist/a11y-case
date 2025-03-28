@@ -1,0 +1,32 @@
+<aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+  <nav class="nav-container">
+    <h2 class="visually-hidden">Main Navigation</h2>
+    
+    <ul class="nav-list">
+      {% for item in site.navigation %}
+        {% assign current_page = false %}
+        {% if page.url == item.url %}
+          {% assign current_page = true %}
+        {% endif %}
+        
+        <li class="nav-item {% if current_page %}active{% endif %}">
+          <a href="{{ item.url | relative_url }}" class="nav-link {% if current_page %}active{% endif %}" {% if current_page %}aria-current="page"{% endif %}>
+            {{ item.title }}
+          </a>
+          
+          {% if current_page and page.subsections %}
+            <ul class="subnav-list">
+              {% for subsection in page.subsections %}
+                <li class="subnav-item">
+                  <a href="#{{ subsection.id }}" class="subnav-link">
+                    {{ subsection.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>
