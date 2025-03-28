@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Case for Accessibility | Accessibility Case Toolkit</title>
+  <meta name="description" content="Best practices and implementation strategies for incorporating accessibility into your development process.">
+  
+  <!-- Preload assets -->
+  <link rel="preload" href="/static/assets/css/main.css" as="style">
+  <link rel="preload" href="/static/assets/js/theme-switcher.js" as="script">
+  <link rel="preload" href="/static/assets/js/navigation.js" as="script">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/static/assets/css/main.css">
+  
+  <!-- Accessibility -->
+  <script>
+    // Apply saved theme before page renders to prevent flicker
+    (function() {
+      const savedTheme = localStorage.getItem('a11y-theme') || 'default';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Check for URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam) {
+        const validThemes = ['default', 'dark', 'quiet', 'high-contrast'];
+        if (validThemes.includes(themeParam)) {
+          document.documentElement.setAttribute('data-theme', themeParam);
+          localStorage.setItem('a11y-theme', themeParam);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="page-container">
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <div class="site-title">
+          <a href="/static/index.html" aria-label="Home">Accessibility Case Toolkit</a>
+        </div>
+        
+        <div class="theme-controls">
+          <label for="theme-select" class="visually-hidden">Choose theme</label>
+          <select id="theme-select" aria-label="Select theme">
+            <option value="default">Default theme</option>
+            <option value="dark">Dark mode</option>
+            <option value="quiet">Quiet mode</option>
+            <option value="high-contrast">High contrast</option>
+          </select>
+          
+          <div class="theme-buttons" role="radiogroup" aria-label="Theme options">
+            <button id="theme-default" class="theme-button" aria-label="Default theme" data-theme="default" role="radio" aria-checked="true">A</button>
+            <button id="theme-dark" class="theme-button" aria-label="Dark mode" data-theme="dark" role="radio" aria-checked="false">A</button>
+            <button id="theme-quiet" class="theme-button" aria-label="Quiet mode" data-theme="quiet" role="radio" aria-checked="false">A</button>
+            <button id="theme-high-contrast" class="theme-button" aria-label="High contrast mode" data-theme="high-contrast" role="radio" aria-checked="false">A</button>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation menu">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </header>
+    
+    <div class="content-container">
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="nav-container">
+          <h2 class="visually-hidden">Main Navigation</h2>
+          
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/static/index.html" class="nav-link">
+                Introduction
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/static/business-case.html" class="nav-link">
+                Business Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/static/legal-case.html" class="nav-link">
+                Legal Case
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="/static/technical-case.html" class="nav-link active" aria-current="page">
+                Technical Case
+              </a>
+              <ul class="subnav-list">
+                <li class="subnav-item">
+                  <a href="#best-practices" class="subnav-link">
+                    Best Practices
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#testing" class="subnav-link">
+                    Testing Methods
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#implementation" class="subnav-link">
+                    Implementation Strategies
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#resources" class="subnav-link">
+                    Tools and Resources
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="/static/accessibility-statement.html" class="nav-link">
+                Accessibility Statement
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <main id="main-content" tabindex="-1">
+        <article class="page">
+          <header class="page-header">
+            <h1>Technical Case for Accessibility</h1>
+          </header>
+        
+          <div class="page-content">
+            <section id="best-practices" class="card">
+              <h2 class="card-title">Best Practices</h2>
+              <div class="card-content">
+                <p>Key technical best practices for accessibility implementation:</p>
+                <ul>
+                  <li><strong>Semantic HTML</strong>: Use proper HTML elements for their intended purpose to provide meaning and structure</li>
+                  <li><strong>ARIA attributes</strong>: Supplement HTML with ARIA when necessary to enhance accessibility</li>
+                  <li><strong>Keyboard navigation</strong>: Ensure all functionality is operable through keyboard-only interaction</li>
+                  <li><strong>Focus management</strong>: Implement visible focus indicators and logical focus order</li>
+                  <li><strong>Color contrast</strong>: Meet WCAG AA requirements for text contrast against backgrounds</li>
+                  <li><strong>Text alternatives</strong>: Provide descriptive alt text for images and transcripts for audio/video</li>
+                  <li><strong>Responsive design</strong>: Create interfaces that adapt to different viewport sizes and zoom levels</li>
+                  <li><strong>Simple language</strong>: Use clear, concise text and avoid complex terminology</li>
+                </ul>
+                <p>Following these practices not only improves accessibility but also leads to more robust, maintainable code.</p>
+              </div>
+              <div class="further-reading" id="further-reading-practices">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-practices">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank" rel="noopener noreferrer">MDN Web Accessibility Guide</a></li>
+                    <li><a href="https://www.w3.org/WAI/tips/" target="_blank" rel="noopener noreferrer">W3C Web Accessibility Initiative Tips</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="testing" class="card">
+              <h2 class="card-title">Testing Methods</h2>
+              <div class="card-content">
+                <p>Comprehensive accessibility testing involves multiple approaches:</p>
+                <ul>
+                  <li><strong>Automated testing</strong>: Using tools like Axe, WAVE, or Lighthouse to identify common issues</li>
+                  <li><strong>Manual testing</strong>: Checking for issues that automated tools can't detect, like meaningful alt text</li>
+                  <li><strong>Keyboard testing</strong>: Navigating through the entire interface using only keyboard controls</li>
+                  <li><strong>Screen reader testing</strong>: Using NVDA, JAWS, VoiceOver, or other assistive technologies</li>
+                  <li><strong>User testing</strong>: Including people with disabilities in usability testing sessions</li>
+                  <li><strong>Color and contrast checking</strong>: Verifying all visual elements meet contrast requirements</li>
+                </ul>
+                <p>No single testing method catches all issues; an integrated approach provides the most comprehensive coverage.</p>
+              </div>
+              <div class="further-reading" id="further-reading-testing">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-testing">
+                  <ul>
+                    <li><a href="https://www.deque.com/axe/" target="_blank" rel="noopener noreferrer">axe Accessibility Testing Tools</a></li>
+                    <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">WebAIM Contrast Checker</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="implementation" class="card">
+              <h2 class="card-title">Implementation Strategies</h2>
+              <div class="card-content">
+                <p>Effective accessibility implementation involves these key strategies:</p>
+                <ul>
+                  <li><strong>Shift left</strong>: Integrate accessibility from the beginning of the design and development process</li>
+                  <li><strong>Component libraries</strong>: Create reusable, accessible UI components to ensure consistency</li>
+                  <li><strong>Automation</strong>: Incorporate accessibility testing into CI/CD pipelines</li>
+                  <li><strong>Documentation</strong>: Maintain clear accessibility guidelines specific to your organization</li>
+                  <li><strong>Training</strong>: Educate all team members about their role in creating accessible products</li>
+                  <li><strong>Progressive enhancement</strong>: Build core functionality that works without reliance on JavaScript</li>
+                </ul>
+                <p>The most successful organizations make accessibility a shared responsibility rather than relegating it to a single team or individual.</p>
+              </div>
+              <div class="further-reading" id="further-reading-implementation">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-implementation">
+                  <ul>
+                    <li><a href="https://www.smashingmagazine.com/2021/04/complete-guide-accessibility-tooling/" target="_blank" rel="noopener noreferrer">A Complete Guide To Accessibility Tooling</a></li>
+                    <li><a href="https://www.deque.com/shift-left/" target="_blank" rel="noopener noreferrer">Shifting Accessibility Testing to the Left</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="resources" class="card">
+              <h2 class="card-title">Tools and Resources</h2>
+              <div class="card-content">
+                <p>Essential tools and resources for technical accessibility implementation:</p>
+                <ul>
+                  <li><strong>Testing tools</strong>: axe DevTools, WAVE, Lighthouse, SiteImprove, ARC Toolkit</li>
+                  <li><strong>Development resources</strong>: WAI-ARIA Authoring Practices, Inclusive Components, A11y Project</li>
+                  <li><strong>Design tools</strong>: Stark, Figma A11y Plugin, Contrast, Color Oracle</li>
+                  <li><strong>Learning resources</strong>: Web Accessibility Initiative (WAI) courses, Deque University, WebAIM articles</li>
+                  <li><strong>Community</strong>: A11y Slack, WebAIM mailing list, local accessibility meetups</li>
+                </ul>
+                <p>Leveraging these resources can significantly accelerate your accessibility implementation journey.</p>
+              </div>
+              <div class="further-reading" id="further-reading-resources">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-resources">
+                  <ul>
+                    <li><a href="https://www.a11yproject.com/resources/" target="_blank" rel="noopener noreferrer">The A11y Project Resources</a></li>
+                    <li><a href="https://www.w3.org/WAI/tools-list/" target="_blank" rel="noopener noreferrer">Web Accessibility Evaluation Tools List</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+    </div>
+    
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="footer-heading">Accessibility Case Toolkit</h2>
+          <p>A toolkit for implementing accessibility in your projects and making the business, legal, and technical case for accessibility.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Links</h2>
+          <ul class="footer-links">
+            <li><a href="/static/accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="https://github.com/accessibility-toolkit" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Feedback</h2>
+          <p>Found an issue or have a suggestion? <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit feedback on GitHub</a>.</p>
+        </div>
+      </div>
+      
+      <div class="footer-meta">
+        <p>Last updated: March 26, 2025</p>
+        <p>&copy; 2025 Accessibility Case Toolkit. <span class="license">Content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> unless otherwise noted.</span></p>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/static/assets/js/theme-switcher.js" defer></script>
+  <script src="/static/assets/js/navigation.js" defer></script>
+  <script src="/static/assets/js/further-reading.js" defer></script>
+</body>
+</html>

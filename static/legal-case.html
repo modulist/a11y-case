@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Case for Accessibility | The New Case for Accessibility</title>
+  <meta name="description" content="Understanding the legal requirements and risk management aspects of digital accessibility.">
+  
+  <!-- Preload assets -->
+  <link rel="preload" href="/assets/css/main.css" as="style">
+  <link rel="preload" href="/assets/js/theme-switcher.js" as="script">
+  <link rel="preload" href="/assets/js/navigation.js" as="script">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <!-- Accessibility -->
+  <script>
+    // Apply saved theme before page renders to prevent flicker
+    (function() {
+      const savedTheme = localStorage.getItem('a11y-theme') || 'default';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Check for URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam) {
+        const validThemes = ['default', 'dark', 'quiet', 'high-contrast'];
+        if (validThemes.includes(themeParam)) {
+          document.documentElement.setAttribute('data-theme', themeParam);
+          localStorage.setItem('a11y-theme', themeParam);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="page-container">
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <div class="site-title">
+          <a href="/index.html" aria-label="Home">Accessibility Case Toolkit</a>
+        </div>
+        
+        <div class="theme-controls">
+          <label for="theme-select" class="visually-hidden">Choose theme</label>
+          <select id="theme-select" aria-label="Select theme">
+            <option value="default">Default theme</option>
+            <option value="dark">Dark theme</option>
+            <option value="quiet">Quiet theme</option>
+            <option value="high-contrast">High contrast</option>
+          </select>
+          
+          <div class="theme-buttons" role="radiogroup" aria-label="Theme options">
+            <button id="theme-default" class="theme-button" aria-label="Default theme" data-theme="default" role="radio" aria-checked="true">A</button>
+            <button id="theme-dark" class="theme-button" aria-label="Dark mode" data-theme="dark" role="radio" aria-checked="false">A</button>
+            <button id="theme-quiet" class="theme-button" aria-label="Quiet mode" data-theme="quiet" role="radio" aria-checked="false">A</button>
+            <button id="theme-high-contrast" class="theme-button" aria-label="High contrast mode" data-theme="high-contrast" role="radio" aria-checked="false">A</button>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation menu">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </header>
+    
+    <div class="content-container">
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="nav-container">
+          <h2 class="visually-hidden">Main Navigation</h2>
+          
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">
+                Introduction
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/business-case.html" class="nav-link">
+                Business Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/moral-case.html" class="nav-link">
+                Moral Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/social-model.html" class="nav-link">
+                The social model, updated.
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="/legal-case.html" class="nav-link active" aria-current="page">
+                Legal Case
+              </a>
+              <ul class="subnav-list">
+                <li class="subnav-item">
+                  <a href="#regulations" class="subnav-link">
+                    Regulations and Standards
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#compliance" class="subnav-link">
+                    Compliance Requirements
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#litigation" class="subnav-link">
+                    Litigation Risk
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#global-standards" class="subnav-link">
+                    Global Standards
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <main id="main-content" tabindex="-1">
+        <article class="page">
+          <header class="page-header">
+            <h1>Legal Case for Accessibility</h1>
+        </header>
+        
+          <div class="page-content">
+            <section class="card">
+              <h2 class="card-title">Legal reasons to conform to accessibility standards</h2>
+              <p>In the United States, accessibility is a protected right covered by the Americans with Disabilities Act (ADA) and some state laws, such as the Unruh Civil Rights Act of California. For that reason, an accessibility lawsuit is handled as a civil rights case.</p>
+            </section>
+
+            <section id="legal-costs" class="card">
+              <h2 class="card-title">Settling a digital accessibility complaint is costly.</h2>
+              <div class="card-content">
+                <p>An analysis from 2019 estimated that it would cost a major business over $350,000 in legal representation at $250/hour to respond to an accessibility lawsuit, in addition to the actual amount of the the settlement.</p>
+                <p>Even if your organization is not in the Fortune 500, a single accessibility lawsuit can cost tens or hundreds of thousands to defend.</p>
+              </div>
+
+              <div class="further-reading" id="further-reading-regulations">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-regulations">
+                  <ul>
+                    <li>
+                      <a href="https://www.deque.com/blog/the-business-case-for-accessibility/" target="_blank" rel="noopener noreferrer">The business case for accessibility
+                      </a>
+                      <p><em>Greg Williams, Deque Systems</em><br>
+                        Real-world numbers from an accessibility-related lawsuit show that legal fees (not including settlement fees) alone could cost you more than $350,000.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="unlikely-to-succeed" class="card">
+              <h2 class="card-title">Defending a digital accessibility suit is unlikely to succeed.</h2>
+              <div class="card-content">
+                <p>Only a handful of accessibility lawsuits have been litigated in favor of the party being sued, typically at a cost of millions in legal fees.</p>
+              </div>
+
+              <!-- <div class="further-reading" id="further-reading-regulations">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-regulations">
+                  <ul>
+                    <li>
+                      <a href="" target="_blank" rel="noopener noreferrer"> </a>
+                      <p><em> </em><br>
+                         
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
+            </section>
+
+            <section id="no-protection" class="card">
+              <h2 class="card-title">An accessibility settlement with one party is no protection from an accessibility lawsuit from another party.</h2>
+              <div class="card-content">
+                <p>Most accessibility settlements include a promise from the defendant to fix accessibility issues within a generous time period, typically 12 months. It’s not a grace period, though. If the issues persist, then other plaintiffs can sue even during the time established in the settlement.</p>
+              </div>
+
+              <!-- <div class="further-reading" id="further-reading-regulations">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-regulations">
+                  <ul>
+                    <li>
+                      <a href="" target="_blank" rel="noopener noreferrer"> </a>
+                      <p><em> </em><br>
+                         
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
+            </section>
+
+            <section id="no-protection" class="card">
+              <h2 class="card-title">Accessibility is still the law of the land.</h2>
+              <div class="card-content">
+                <p>Even if the executive branch of the US government selectively enforces existing law or not at all, accessibility laws still apply to private parties as well as state and local governments.
+                </p>
+              </div>
+
+              <div class="further-reading" id="further-reading-regulations">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-regulations">
+                  <ul>
+                    <li>
+                      <a href="https://www.levelaccess.com/blog/digital-accessibility-in-2025-q1-update/" target="_blank" rel="noopener noreferrer">Recent Executive Orders on DEI Do Not Change Digital Accessibility Requirements</a>
+                      <p><em>Level Access</em><br>
+                        This article from a leading accessibility firm explains how the closing of federal DEI departments doesn't affect digital accessibility requirements, which remain vital due to ongoing legal obligations and increasing market demand.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="no-protection">
+
+              <div class="card">
+                <h2 class="card-title">Here are the laws that apply in the United States:</h2>
+              </div>
+
+              <div class="card">
+                <h3 class="card-title">Americans with Disabilities Act (ADA) (1990)</h3>
+                <div class="card-content">
+                  <p>The ADA requires that public accommodations such as entrances, elevators, restrooms, and other facilities be physically accessible. Most courts agree that the ADA also applies to digital accommodations such as websites, especially if they are for a physical brick-and-mortar business.</p>
+ 
+                   <div class="further-reading" id="further-reading-regulations">
+                    <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                    <div class="further-reading-content" id="fr-content-regulations">
+                      <ul>
+                        <li>
+                          <a href="https://www.ada.gov/law-and-regs/regulations/title-iii-regulations/" target="_blank" rel="noopener noreferrer">Americans with Disabilities Act</a>
+                            <p>A direct link to the statute itself.</p>
+                        </li>
+                        <li>
+                          <a href="https://www.ada.gov/resources/web-guidance/" target="_blank" rel="noopener noreferrer">DOJ Guidance on Web Accessibility and the ADA (2022)</a>
+                          <p><em>US Department of Justice (DOJ)</em><br>
+                            This site has an overview of the DOJ’s enforcement of the ADA towards state and local governments (Title II) and businesses that are open to the public (Title III). Note: Civil accessibility cases are completely separate from the DOJ’s enforcement and not covered by this website.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+
+              <div class="card">
+                <h3 class="card-title">21st Century Communications and Video Accessibility Act (CVAA) (2010)</h3>
+                <div class="card-content">
+                  <p>The CVAA requires that telecommunications companies, TV broadcasters, and online media providers ensure that modern communications (smartphones, video calls, streaming services, telemedicine etc.) are accessible.</p>
+                  <p>Specifically, the CVAA requires closed captioning on TV and online video content, among other accommodations.</p>
+
+                  <div class="further-reading" id="further-reading-regulations">
+                    <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                    <div class="further-reading-content" id="fr-content-regulations">
+                      <ul>
+                        <li>
+                          <a href="https://www.fcc.gov/cvaa" target="_blank" rel="noopener noreferrer">21st Century Communications and Video Accessibility Act (CVAA)</a>
+                            <p>A direct link to the statute itself.</p>
+                        </li>
+                       </ul>
+                    </div>
+                  </div>   
+                </div>
+              </div>
+              <div class="card">
+                <h3 class="card-title">Air Carrier Access Act (ACAA) (1986)</h3>
+                <div class="card-content">
+                  <p>All U.S. and foreign airlines operating in the U.S. are required to provide wheelchair access, onboard accommodations, and accessible communications.</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <h3 class="card-title">Section 504 of the Rehabilitation Act (1973)</h3>
+                <div class="card-content">
+                  <p>Organizations that receive federal funding, such as schools, hospitals, and public programs are required to ensure equal access to services, programs, and activities for people with disabilities. Section 504 covers physical and digital access, including websites and online resources.</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <h3 class="card-title">Section 508 of the Rehabilitation Act (1998 Update)</h3>
+                <div class="card-content">
+                  <p>Federal agencies and any organizations that receive federal contracts or funding are required to ensure Digital and IT accessibility for federal websites, software, and electronic content. Section 508 specifically calls for conformance with WCAG 2.0 AA guidelines for web accessibility.</p>
+                </div>
+              </div>
+ 
+              <div class="card">
+                <h3 class="card-title">State-Specific Laws</h3>
+                <div class="card-content">
+                  <p>Some states have their own accessibility laws that go beyond federal regulations. California’s Unruh Civil Rights Act and New York’s Digital Accessibility Laws are two examples.</p>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </article>
+      </main>
+    </div>
+    
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="footer-heading">Accessibility Case Toolkit</h2>
+          <p>A toolkit for implementing accessibility in your projects and making the business, legal, and technical case for accessibility.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Links</h2>
+          <ul class="footer-links">
+            <li><a href="/accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="https://github.com/accessibility-toolkit" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Feedback</h2>
+          <p>Found an issue or have a suggestion? <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit feedback on GitHub</a>.</p>
+        </div>
+      </div>
+      
+      <div class="footer-meta">
+        <p>Last updated: March 26, 2025</p>
+        <p>&copy; 2025 Accessibility Case Toolkit. <span class="license">Content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> unless otherwise noted.</span></p>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/navigation.js" defer></script>
+  <script src="/assets/js/further-reading.js" defer></script>
+</body>
+</html>

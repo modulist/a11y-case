@@ -1,0 +1,26 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h2 class="footer-heading">{{ site.title }}</h2>
+      <p>{{ site.description }}</p>
+    </div>
+    
+    <div class="footer-section">
+      <h2 class="footer-heading">Links</h2>
+      <ul class="footer-links">
+        <li><a href="{{ '/accessibility-statement/' | relative_url }}">Accessibility Statement</a></li>
+        <li><a href="https://github.com/accessibility-toolkit" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h2 class="footer-heading">Feedback</h2>
+      <p>Found an issue or have a suggestion? <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit feedback on GitHub</a>.</p>
+    </div>
+  </div>
+  
+  <div class="footer-meta">
+    <p>Last updated: {{ site.time | date: '%B %d, %Y' }}</p>
+    <p>&copy; {{ site.time | date: '%Y' }} Accessibility Case Toolkit. <span class="license">Content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> unless otherwise noted.</span></p>
+  </div>
+</footer>

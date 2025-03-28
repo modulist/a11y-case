@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Case for Accessibility | The New Case for Accessibility</title>
+  <meta name="description" content="Understanding the commercial and organizational benefits of implementing accessibility in your products and services.">
+  
+  <!-- Preload assets -->
+  <link rel="preload" href="/assets/css/main.css" as="style">
+  <link rel="preload" href="/assets/js/theme-switcher.js" as="script">
+  <link rel="preload" href="/assets/js/navigation.js" as="script">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <!-- Accessibility -->
+  <script>
+    // Apply saved theme before page renders to prevent flicker
+    (function() {
+      const savedTheme = localStorage.getItem('a11y-theme') || 'default';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Check for URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam) {
+        const validThemes = ['default', 'dark', 'quiet', 'high-contrast'];
+        if (validThemes.includes(themeParam)) {
+          document.documentElement.setAttribute('data-theme', themeParam);
+          localStorage.setItem('a11y-theme', themeParam);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="page-container">
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <div class="site-title">
+          <a href="/index.html" aria-label="Home">The New Case for Accessibility</a>
+        </div>
+        
+        <div class="theme-controls">
+          <label for="theme-select" class="visually-hidden">Choose theme</label>
+          <select id="theme-select" aria-label="Select theme">
+            <option value="default">Default theme</option>
+            <option value="dark">Dark mode</option>
+            <option value="quiet">Quiet mode</option>
+            <option value="high-contrast">High contrast</option>
+          </select>
+          
+          <div class="theme-buttons" role="radiogroup" aria-label="Theme options">
+            <button id="theme-default" class="theme-button" aria-label="Default theme" data-theme="default" role="radio" aria-checked="true">A</button>
+            <button id="theme-dark" class="theme-button" aria-label="Dark mode" data-theme="dark" role="radio" aria-checked="false">A</button>
+            <button id="theme-quiet" class="theme-button" aria-label="Quiet mode" data-theme="quiet" role="radio" aria-checked="false">A</button>
+            <button id="theme-high-contrast" class="theme-button" aria-label="High contrast mode" data-theme="high-contrast" role="radio" aria-checked="false">A</button>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation menu">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </header>
+    
+    <div class="content-container">
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="nav-container">
+          <h2 class="visually-hidden">Main Navigation</h2>
+          
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">
+                Overview
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="/business-case.html" class="nav-link active" aria-current="page">
+                The Business Case
+              </a>
+              <ul class="subnav-list">
+                <li class="subnav-item">
+                  <a href="#buying-power" class="subnav-link">
+                    People with disabilities have significant buying power.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#purchase-from-companies" class="subnav-link">
+                    People with disabilities are far more likely to purchase from companies that take their needs into account.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#switch-to-competitor" class="subnav-link">
+                    Most people who face accessibility challenges would consider switching to a competitor with better features.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#abandoned-shopping-carts" class="subnav-link">
+                    Accessibility challenges lead to abandoned shopping carts.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#friends-and-family" class="subnav-link">
+                    People with disabilities often influence the purchasing decisions of friends and family.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#user-friendly" class="subnav-link">
+                    An accessible business is a user-friendly business.
+                  </a>
+                </li>
+               </ul>
+            </li>
+            <li class="nav-item">
+              <a href="/moral-case.html" class="nav-link">
+                The Moral Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/social-model.html" class="nav-link">
+                The social model, updated.
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/legal-case.html" class="nav-link">
+                The Legal Case
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <main id="main-content" tabindex="-1">
+        <article class="page">
+          <header class="page-header">
+            <h1>The Business Case</h1>
+          </header>
+        
+          <div class="page-content">
+            <section id="prosperous-business" class="card">
+              An accessible business is a prosperous business.
+            </section>
+            <section id="buying-power" class="card">             
+              <h2 class="card-title">People with disabilities have significant buying power.</h2>
+              <div class="card-content">
+                <p>According to a <a href="https://www.air.org/resource/report/hidden-market-purchasing-power-working-age-adults-disabilities" target="_blank" rel="noopener noreferrer">2018 report</a>, approximately 20 million working-age adults with disabilities collectively earn an annual disposable income of $490 billion.</p>
+              <p>Note: This figure does not include the buying power of retirees through income or assets. Adults over 65 have a more than even chance of having a disability, and they own an estimated 70% of private assets in the US.</p>
+              <p>As the population trends older, we project that the buying power of people with disabilities will increase relative to the rest of the population.</p>
+
+              <div class="further-reading" id="further-reading-buying-power">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-buying-power">
+                  <ul>
+                    <li><a href="https://www.air.org/resource/report/hidden-market-purchasing-power-working-age-adults-disabilities" target="_blank" rel="noopener noreferrer">A Hidden Market: The Purchasing Power of Working-Age Adults With Disabilities</a>
+                      <p><em>American Institutes for Research</em><br>
+                      This report examines the significant and growing economic power of the disability market through the lens of disposable and discretionary income.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+           </section>
+
+            <section id="purchase-from-companies" class="card">             
+              <h2 class="card-title">People with disabilities are far more likely to purchase from companies that take their needs into account.</h2>
+              <div class="card-content">
+                <p>People with disabilities are far more likely to purchase from an accessible company. It's faster and more convenient, and they don't need to seek assistance to make a purchase.</p>
+              <p>The frustration caused by the lack of accessibility has caused many disabled persons to abandon a purchase halfway through.</p>
+
+              <div class="further-reading" id="further-reading-buying-habits">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-buying-habits">
+                  <ul>
+                    <li><a href="https://www.levelaccess.com/infographic/buying_habits_of_people_with_disabilities.pdf" target="_blank" rel="noopener noreferrer">Buying Habits of People with Disabilities</a>
+                    <p><em>Level Access/essentialAccessibility</em><br>
+                      This one-page poster provides an overview of various statistics related to the consumer power of disabled Americans.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+            </section>  
+
+            <section id="switch-to-competitor" class="card">             
+              <h2 class="card-title">Most people who face accessibility challenges would consider switching to a competitor with better features.</h2>
+              <div class="card-content">
+                <p>A 2024 survey reported that 62% of respondents would consider switching if they consistently faced accessibility challenges with a brand's digital platforms.</p>
+
+              <div class="further-reading" id="further-reading-consumer-perspectives">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-consumer-perspectives">
+                  <ul>
+                    <li><a href="https://www.acquia.com/accessibility-report-2024" target="_blank" rel="noopener noreferrer">Consumer Perspectives on Digital Accessibility</a>
+                      <p><em>Acquia</em><br>
+                        In 2024, Acquia commissioned a survey to understand how users with disabilities perceive the state of digital accessibility, and how their experiences impact brand perception and loyalty.</p>
+                   </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            </section>  
+
+            <section id="abandoned-shopping-carts" class="card">             
+              <h2 class="card-title">Accessibility challenges lead to abandoned shopping carts.</h2>
+              <div class="card-content">
+                <p>A 2021 study in the UK found that 43% of disabled consumers abandoned shopping tasks without completing their purchases as the result of limited choices and feelings of disempowerment.</p>
+
+              <div class="further-reading" id="further-reading-consumer-choices">
+                <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                <div class="further-reading-content" id="fr-content-consumer-choices">
+                  <ul>
+                    <li><a href="https://businessdisabilityforum.org.uk/resource/report-what-disabled-consumers-choose-to-buy-and-why/" target="_blank" rel="noopener noreferrer">What disabled consumers choose to buy and why</a>
+                      <p><em>Business Disability Forum</em><br>
+                        Disabled consumers across the UK experience limited choice and feelings of disempowerment when purchasing products, services, and activities, resulting in over 43 percent abandoning shopping tasks without purchasing.</p>
+                   </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            </section>  
+
+            <section id="friends-and-family" class="card">
+              <h2 class="card-title">People with disabilities often influence the purchasing decisions of friends and family.</h2>
+              <div class="card-content">
+                <p>Especially in hospitality, accessibility barriers impact everyone in a group. If there is one person with a disability in a group, they are likely to all leave if the experience is inaccessible. They don't want their friend or loved ones to be left out.</p>
+                <p>When a business is inaccessible, people with disabilities often influence family and friends to avoid it.</p>
+
+                <div class="further-reading" id="further-reading-influence">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-influence">
+                    <ul>
+                      <li><a href="https://www.urban.org/sites/default/files/2022-10/People%20with%20Disabilities%20Living%20in%20the%20US%20Face%20Urgent%20Barriers%20to%20Housing_0.pdf" target="_blank" rel="noopener noreferrer">People With Disabilities Living In The US Face Urgent Barriers To Housing</a>
+                        <p><em>Urban Institute</em><br>
+                          An analysis of the US Census Bureau’s 2021 Current Population Survey data suggests that people with disabilities are more likely to be heads of households than abled people. Most people with disabilities (58 percent) are heads of their households, while 47 percent of nondisabled people are heads of their households.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                </div>         
+            </section>  
+
+            <section id="user-friendly" class="card">
+              <h2 class="card-title">An accessible business is a user-friendly business.</h2>
+              <div class="card-content">
+                <p>Among user experience (UX) professionals, it's a fundamental fact that accessibility practices we teach also improve the overall user experience for everyone.</p>
+
+                <div class="further-reading" id="further-reading-inclusive-design">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-inclusive-design">
+                    <ul>
+                      <li><a href="https://inclusive.microsoft.design/" target="_blank" rel="noopener noreferrer">Microsoft Inclusive Design</a>
+                        <p><em>Microsoft</em><br>
+                          Inclusive Design is a methodology born out of digital environments that enables and draws on the full range of human diversity.</p>                       
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+           </div>
+        </article>
+      </main>
+    </div>
+    
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="footer-heading">The New Case for Accessibility</h2>
+          <p>A toolkit for implementing accessibility in your projects and making the business, legal, and technical case for accessibility.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Links</h2>
+          <ul class="footer-links">
+            <li><a href="/accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="https://github.com/accessibility-toolkit" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Feedback</h2>
+          <p>Found an issue or have a suggestion? <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit feedback on GitHub</a>.</p>
+        </div>
+      </div>
+      
+      <div class="footer-meta">
+        <p>Last updated: March 26, 2025</p>
+        <p>&copy; 2025 The New Case for Accessibility. <span class="license">Content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> unless otherwise noted.</span></p>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/navigation.js" defer></script>
+  <script src="/assets/js/further-reading.js" defer></script>
+</body>
+</html>

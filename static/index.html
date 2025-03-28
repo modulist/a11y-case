@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The New Case for Accessibility</title>
+  <meta name="description" content="A toolkit for implementing accessibility in your projects and making the business, legal, and technical case for accessibility.">
+  
+  <!-- Preload assets -->
+  <link rel="preload" href="/assets/css/main.css" as="style">
+  <link rel="preload" href="/assets/js/theme-switcher.js" as="script">
+  <link rel="preload" href="/assets/js/navigation.js" as="script">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <!-- Accessibility -->
+  <script>
+    // Apply saved theme before page renders to prevent flicker
+    (function() {
+      const savedTheme = localStorage.getItem('a11y-theme') || 'default';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Check for URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam) {
+        const validThemes = ['default', 'dark', 'quiet', 'high-contrast'];
+        if (validThemes.includes(themeParam)) {
+          document.documentElement.setAttribute('data-theme', themeParam);
+          localStorage.setItem('a11y-theme', themeParam);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="page-container">
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <div class="site-title">
+          <a href="/index.html" aria-label="Home">The New Case for Accessibility</a>
+        </div>
+        
+        <div class="theme-controls">
+          <label for="theme-select" class="visually-hidden">Choose theme</label>
+          <select id="theme-select" aria-label="Select theme">
+            <option value="default">Default theme</option>
+            <option value="dark">Dark mode</option>
+            <option value="quiet">Quiet mode</option>
+            <option value="high-contrast">High contrast</option>
+          </select>
+          
+          <div class="theme-buttons" role="radiogroup" aria-label="Theme options">
+            <button id="theme-default" class="theme-button" aria-label="Default theme" data-theme="default" role="radio" aria-checked="true">A</button>
+            <button id="theme-dark" class="theme-button" aria-label="Dark mode" data-theme="dark" role="radio" aria-checked="false">A</button>
+            <button id="theme-quiet" class="theme-button" aria-label="Quiet mode" data-theme="quiet" role="radio" aria-checked="false">A</button>
+            <button id="theme-high-contrast" class="theme-button" aria-label="High contrast mode" data-theme="high-contrast" role="radio" aria-checked="false">A</button>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation menu">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </header>
+    
+    <div class="content-container">
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="nav-container">
+          <h2 class="visually-hidden">Main Navigation</h2>
+          
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <a href="/index.html" class="nav-link active" aria-current="page">
+                Overview
+              </a>
+              <ul class="subnav-list">
+                <li class="subnav-item">
+                  <a href="#the-challenge" class="subnav-link">
+                    The Challenge
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#our-mission" class="subnav-link">
+                    Our Mission
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#what-is-accessibility" class="subnav-link">
+                    What is Accessibility
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#credits" class="subnav-link">
+                    Credits
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="/business-case.html" class="nav-link">
+                Business Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/moral-case.html" class="nav-link">
+                Moral Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/social-model.html" class="nav-link">
+                The social model, updated.
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/legal-case.html" class="nav-link">
+                Legal Case
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <main id="main-content" tabindex="-1">
+        <article class="page">
+          <header class="page-header">
+            <h1>The New Case for Accessibility</h1>
+          </header>
+        
+          <div class="page-content">
+            <section id="overview" class="card">
+              <h2 class="card-title">Overview</h2>
+              <div class="card-content">
+                <p>The business, legal, and moral case for accessibility in toolkit form.</p>
+              </div>
+            </section>
+            
+            <section id="the-challenge" class="card">
+              <h2 class="card-title">The Challenge</h2>
+              <div class="card-content">
+                <p>With the current changes in the United States government and the corporate world's shift away from Diversity, Equity, and Inclusion (DEI), accessibility has been caught in the political crossfire.</p>
+                <p>Because many of the most-used arguments for accessibility rely on principles like DEI, it's easy to think that the practice of digital accessibility itself is in danger.</p>
+              </div>
+            </section>
+            
+            <section id="our-mission" class="card">
+              <h2 class="card-title">Our Mission</h2>
+              <div class="card-content">
+                <p>Our mission is to provide a survival kit with a broader set of arguments to make a solid case for digital accessibility. Its goal is to expand a practitioner's repertoire to include arguments in favor of accessibility that transcend the winds of legal and political change.</p>
+                <p>By making these arguments available to anyone, we hope to reframe accessibility as a practice based on common sense and the pursuit of usability, quality, and safety that provides autonomy for people with disabilities and increased usability for everyone.</p>
+              </div>
+            </section>
+            
+            <section id="what-is-accessibility" class="card">
+              <h2 class="card-title">What is Accessibility</h2>
+              <div class="card-content">
+                <p>For purposes of this document, we define accessibility as: the ability of as many people as possible to access goods and services as efficiently and independently as possible. While we focus on digital accessibility, or the accessibility of things that come to us electronically, many of these arguments can be applied to other categories of accessibility as well.</p>
+              </div>
+            </section>
+            
+            <section id="credits" class="card">
+              <h2 class="card-title">Credits</h2>
+              <div class="card-content">
+                <p><strong>Authors:</strong> Claudio Luís Vera, Angela Fowler</p>
+                <p><strong>Reviewers:</strong></p>
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+    </div>
+    
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="footer-heading">The New Case for Accessibility</h2>
+          <p>A toolkit for implementing accessibility in your projects and making the business, legal, and technical case for accessibility.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Links</h2>
+          <ul class="footer-links">
+            <li><a href="/accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="https://github.com/accessibility-toolkit" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Feedback</h2>
+          <p>Found an issue or have a suggestion? <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit feedback on GitHub</a>.</p>
+        </div>
+      </div>
+      
+      <div class="footer-meta">
+        <p>Last updated: March 27, 2025</p>
+        <p>&copy; 2025 The New Case for Accessibility. <span class="license">Content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> unless otherwise noted.</span></p>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/navigation.js" defer></script>
+  <script src="/assets/js/further-reading.js" defer></script>
+</body>
+</html>

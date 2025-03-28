@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moral Case for Accessibility | Accessibility Case Toolkit</title>
+  <meta name="description" content="Understanding the ethical and social importance of implementing accessibility in your products and services.">
+  
+  <!-- Preload assets -->
+  <link rel="preload" href="/assets/css/main.css" as="style">
+  <link rel="preload" href="/assets/js/theme-switcher.js" as="script">
+  <link rel="preload" href="/assets/js/navigation.js" as="script">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <!-- Accessibility -->
+  <script>
+    // Apply saved theme before page renders to prevent flicker
+    (function() {
+      const savedTheme = localStorage.getItem('a11y-theme') || 'default';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Check for URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam) {
+        const validThemes = ['default', 'dark', 'quiet', 'high-contrast'];
+        if (validThemes.includes(themeParam)) {
+          document.documentElement.setAttribute('data-theme', themeParam);
+          localStorage.setItem('a11y-theme', themeParam);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="page-container">
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <div class="site-title">
+          <a href="/index.html" aria-label="Home">The New Case for Accessibility</a>
+        </div>
+        
+        <div class="theme-controls">
+          <label for="theme-select" class="visually-hidden">Choose theme</label>
+          <select id="theme-select" aria-label="Select theme">
+            <option value="default">Default theme</option>
+            <option value="dark">Dark theme</option>
+            <option value="quiet">Quiet theme</option>
+            <option value="high-contrast">High contrast theme</option>
+          </select>
+
+          <div class="theme-buttons" role="radiogroup" aria-label="Theme options">
+            <button id="theme-default" class="theme-button" aria-label="Default theme" data-theme="default" role="radio" aria-checked="true">A</button>
+            <button id="theme-dark" class="theme-button" aria-label="Dark mode" data-theme="dark" role="radio" aria-checked="false">A</button>
+            <button id="theme-quiet" class="theme-button" aria-label="Quiet mode" data-theme="quiet" role="radio" aria-checked="false">A</button>
+            <button id="theme-high-contrast" class="theme-button" aria-label="High contrast mode" data-theme="high-contrast" role="radio" aria-checked="false">A</button>
+          </div>
+        </div>
+
+        
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sidebar">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </header>
+    
+    <div class="content-container">
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="nav-container">
+          <h2 class="visually-hidden">Main Navigation</h2>
+          
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">
+                Overview
+              </a>
+            <li class="nav-item">
+              <a href="/business-case.html" class="nav-link">
+                Business Case
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="/moral-case.html" class="nav-link active" aria-current="page">
+                Moral Case
+              </a>
+              <ul class="subnav-list">
+                <li class="subnav-item">
+                  <a href="#right-thing" class="subnav-link">
+                    Accessibility is the right thing to do.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#valuable-resource" class="subnav-link">
+                    Disabled people are a valuable resource.
+                  </a>
+                </li>
+                <li class="subnav-item">
+                  <a href="#help-incentives" class="subnav-link">
+                    There is help, and there are incentives.
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="/social-model.html" class="nav-link">
+                The social model, updated.
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/legal-case.html" class="nav-link">
+                Legal Case
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <main id="main-content" tabindex="-1">
+        <article class="page">
+          <header class="page-header">
+            <h1>Moral Case for Accessibility</h1>
+          </header>
+        
+          <div class="page-content">
+            <section id="right-thing" class="card">
+              Accessibility is the right thing to do.
+            </section>
+            <section class="card">
+              <h2 class="card-title">Most of us still believe that people with disabilities should have equal access to goods and services.</h2>
+              <div class="card-content">
+                 <p>Among the rhetoric that challenges Diversity, Equity, and Inclusion (DEI), very few attempts to justify it include denying access to people with disabilities.</p>
+                <p>In the current climate, it's safer to make a case for accessibility based on autonomy or use by everyone than on inclusion or DEI initiatives.</p>
+
+               <!-- <div class="further-reading" id="further-reading-autonomy">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-autonomy">
+                    <ul>
+                      <li><a href="" target="_blank" rel="noopener noreferrer"></a></li>
+                    </ul>
+                  </div>
+                </div> -->
+              </section>
+
+            <section id="socially-conscious" class="card">
+                <h2 class="card-title">Accessible businesses earn reputations for being socially conscious.</h2>
+                <div class="card-content">
+                  <p>Accessible businesses earn a reputation for being socially conscious, which is still important to many, particularly millennials.</p>
+
+                  <!-- <div class="further-reading" id="further-reading-esg">
+                    <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                    <div class="further-reading-content" id="fr-content-esg">
+                      <ul>
+                        <li><a href=" " target="_blank" rel="noopener noreferrer"> </a></li>
+                      </ul>
+                    </div>
+                  </div> -->
+                </div>
+            </section>
+            
+            <section id="valuable-resource" class="card">
+              Disabled people are a valuable resource.
+            </section>
+
+            <section class="card">
+              <h2 class="card-title">Most employers underestimate the capabilities of people with disabilities.</h2>
+              <div class="card-content">
+                <p>People with disabilities are more capable than most people think.</p>
+                <p>Given proper training and an accessible environment, most people with disabilities can perform most jobs comparable to those without.</p>
+
+                <!-- <div class="further-reading" id="further-reading-disabilities-workplace">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-disabilities-workplace">
+                    <ul>
+                      <li><a href=" " target="_blank" rel="noopener noreferrer"> </a></li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+            </section>
+
+            <section class="card">
+              <h2 class="card-title">People with disabilities tend to be extra loyal to companies that give them a chance.</h2>
+              <div class="card-content">
+                <p>Disabled employees are far less likely to jump from job to job, favoring long-term security instead.</p>
+
+                <div class="further-reading" id="further-reading-disabilities-workplace">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-disabilities-workplace">
+                    <ul>
+                      <li><a href="https://askjan.org/topics/costs.cfm" target="_blank" rel="noopener noreferrer">Costs and benefits of accommodation</a>
+                        <p><em>Job Accommodation Network</em><br>
+                        A wealth of talent awaits employers who open doors to candidates with disabilities, and effective job accommodations are key to hiring and retaining them.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2 class="card-title">People with disabilities are often better problem solvers.</h2>
+              <div class="card-content">
+                <p>People with disabilities bring benefits to the team, such as resilience and superior problem-solving skills.</p>
+                <p>The lack of accessibility they often have to overcome forces people with disabilities to be resilient and creative in finding workarounds to everyday barriers.</p>
+
+                <!-- <div class="further-reading" id="further-reading-disabilities-workplace">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-disabilities-workplace">
+                    <ul>
+                      <li><a href=" " target="_blank" rel="noopener noreferrer"> </a></li>
+                    </ul>
+                  </div>
+                </div> -->
+              </div>
+            </section>
+            
+            <section id="help-incentives" class="card">
+              There is help, and there are incentives.
+            </section>
+
+            <section class="card">
+              <h2 class="card-title">Employers can easily get help for making workplace accommodations</h2>
+              <div class="card-content">
+                  <p>Programs like the Job Accommodation Network (JAN) provide advice and solutions for employers who want to hire people with disabilities but do not know how to best accommodate them.</p>
+
+                <div class="further-reading" id="further-reading-jan">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-jan">
+                    <ul>
+                      <li><a href="https://askjan.org/" target="_blank" rel="noopener noreferrer">Job Accommodation Network (JAN) website</a>
+                      <p>JAN is the leading source of free, expert, and confidential guidance on workplace accommodations published by the Department of Labor’s Office of Disability Employment.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card">
+                <h2 class="card-title">Small businesses can even earn a tax credit.</h2>
+                <div class="card-content">
+                  <p>The Disabled Access Credit (DAC) is a tax credit available to small businesses in the U.S. that make accommodations to improve accessibility for people with disabilities. Businesses under 30 employees and $1 million in gross receipts can apply for a tax credit that covers up to 50% of eligible expenses, up to $5,000 for the tax year.</p>
+
+                  <div class="further-reading" id="further-reading-tax-incentives">
+                    <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                    <div class="further-reading-content" id="fr-content-tax-incentives">
+                      <ul>
+                        <li><a href="https://askjan.org/topics/taxinc.cfm" target="_blank" rel="noopener noreferrer">Tax Incentive Topics</a>
+                        <p>
+                          <em>Job Accommodation Network</em><br>
+                          This publication summarizes tax incentives related to accessibility and the employment of people with disabilities.</p></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="social-model" class="card">
+              <h2 class="card-title">The social model, updated.</h2>
+            </section>
+
+            <section class="card">
+              <h2 class="card-title">Accessibility barriers disable people more than physical conditions</h2>
+             <div class="card-content">
+                <p>In the 1980s, a group of British disability activists stated that it is society that disables people. The world is built and designed for abled people, and thus the limitations on disabled people's abilities to perform everyday activities come from the built environment and societal systems.</p>
+                <p>With the coming of the internet, software in the workplace, and personal devices, it's become clear that the digital world also creates new barriers.</p>
+
+                <h3>In a barrier-free world, disabled people would need little or no assistance</h3>
+                <p>With access to environments, vehicles, software, and digital experiences that work for them, people with disabilities would enjoy greater autonomy to perform everyday activities.</p>
+
+                <h3>Fewer barriers and more autonomy lead to greater employability</h3>
+                <p>As barriers to workplace activities diminish, people with disabilities will be able to participate more with their abled counterparts and have equal footing in the workplace.</p>
+
+                <h3>Accessibility reduces dependence on social welfare programs</h3>
+                <p>With greater access to jobs, people with disabilities will be able to enjoy more economic autonomy. As a result, fewer will need supplemental income and other publicly-funded assistance.</p>
+
+                <div class="further-reading" id="further-reading-economic-conditions">
+                  <h3 class="further-reading-title" tabindex="0">Further Reading</h3>
+                  <div class="further-reading-content" id="fr-content-economic-conditions">
+                    <ul>
+                      <li><a href="https://www.ssa.gov/policy/docs/ssb/v77n4/v77n4p27.html" target="_blank" rel="noopener noreferrer">Economic Conditions and Supplemental Security Income Application</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+    </div>
+    
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="footer-heading">Accessibility Case Toolkit</h2>
+          <p>A toolkit for implementing accessibility in your projects and making the business, legal, and technical case for accessibility.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Links</h2>
+          <ul class="footer-links">
+            <li><a href="/accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="https://github.com/accessibility-toolkit" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Feedback</h2>
+          <p>Found an issue or have a suggestion? <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit feedback on GitHub</a>.</p>
+        </div>
+      </div>
+      
+      <div class="footer-meta">
+        <p>Last updated: March 26, 2025</p>
+        <p>&copy; 2025 Accessibility Case Toolkit. <span class="license">Content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> unless otherwise noted.</span></p>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/navigation.js" defer></script>
+  <script src="/assets/js/further-reading.js" defer></script>
+</body>
+</html>

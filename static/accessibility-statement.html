@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Statement | Accessibility Case Toolkit</title>
+  <meta name="description" content="The Accessibility Case Toolkit is committed to ensuring digital accessibility for people with disabilities.">
+  
+  <!-- Preload assets -->
+  <link rel="preload" href="/assets/css/main.css" as="style">
+  <link rel="preload" href="/assets/js/theme-switcher.js" as="script">
+  <link rel="preload" href="/assets/js/navigation.js" as="script">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <!-- Accessibility -->
+  <script>
+    // Apply saved theme before page renders to prevent flicker
+    (function() {
+      const savedTheme = localStorage.getItem('a11y-theme') || 'default';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      // Check for URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const themeParam = urlParams.get('theme');
+      if (themeParam) {
+        const validThemes = ['default', 'dark', 'quiet', 'high-contrast'];
+        if (validThemes.includes(themeParam)) {
+          document.documentElement.setAttribute('data-theme', themeParam);
+          localStorage.setItem('a11y-theme', themeParam);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="page-container">
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <div class="site-title">
+          <a href="/index.html" aria-label="Home">The New Case for Accessibility</a>
+        </div>
+        
+        <div class="theme-controls">
+          <label for="theme-select" class="visually-hidden">Choose theme</label>
+          <select id="theme-select" aria-label="Select theme">
+            <option value="default">Default theme</option>
+            <option value="dark">Dark mode</option>
+            <option value="quiet">Quiet mode</option>
+            <option value="high-contrast">High contrast</option>
+          </select>
+          
+          <div class="theme-buttons" role="radiogroup" aria-label="Theme options">
+            <button id="theme-default" class="theme-button" aria-label="Default theme" data-theme="default" role="radio" aria-checked="true">A</button>
+            <button id="theme-dark" class="theme-button" aria-label="Dark mode" data-theme="dark" role="radio" aria-checked="false">A</button>
+            <button id="theme-quiet" class="theme-button" aria-label="Quiet mode" data-theme="quiet" role="radio" aria-checked="false">A</button>
+            <button id="theme-high-contrast" class="theme-button" aria-label="High contrast mode" data-theme="high-contrast" role="radio" aria-checked="false">A</button>
+          </div>
+        </div>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation menu">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </header>
+    
+    <div class="content-container">
+      <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <nav class="nav-container">
+          <h2 class="visually-hidden">Main Navigation</h2>
+          
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="/index.html" class="nav-link">
+                Introduction
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/business-case.html" class="nav-link">
+                Business Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/legal-case.html" class="nav-link">
+                Legal Case
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/technical-case.html" class="nav-link">
+                Technical Case
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <main id="main-content" tabindex="-1">
+        <article class="page">
+          <header class="page-header">
+            <h1>Accessibility Statement</h1>
+          </header>
+        
+          <div class="page-content">
+            <h2>Our Commitment</h2>
+            <p>The Accessibility Case Toolkit is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
+            
+            <h2>Conformance Status</h2>
+            <p>The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.</p>
+            <p>The Accessibility Case Toolkit is fully compliant with WCAG 2.1 level AA. We've also implemented many level AAA features where possible.</p>
+            
+            <h2>Measures Taken</h2>
+            <p>We've taken the following measures to ensure accessibility:</p>
+            <ul>
+              <li>Semantic HTML structure with appropriate ARIA landmarks</li>
+              <li>Keyboard navigation for all interactive elements</li>
+              <li>Color contrast ratios that meet or exceed WCAG 2.1 AA standards</li>
+              <li>Multiple theme options, including high contrast mode</li>
+              <li>Skip links for keyboard users</li>
+              <li>Proper heading hierarchy</li>
+              <li>Descriptive link text</li>
+              <li>Responsive design that works on various devices and screen sizes</li>
+              <li>Focus indicators for keyboard navigation</li>
+            </ul>
+            
+            <h2>Feedback</h2>
+            <p>We welcome your feedback on the accessibility of the Accessibility Case Toolkit. Please let us know if you encounter accessibility barriers:</p>
+            <ul>
+              <li>GitHub: <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit an issue</a></li>
+              <li>Email: <a href="mailto:accessibility@example.com">accessibility@example.com</a></li>
+            </ul>
+            <p>We try to respond to feedback within 2 business days.</p>
+            
+            <h2>Technical Information</h2>
+            <p>This site was built using:</p>
+            <ul>
+              <li>HTML5 semantic markup</li>
+              <li>CSS with custom properties for theming</li>
+              <li>JavaScript for enhanced interactions</li>
+              <li>Automated and manual accessibility testing</li>
+            </ul>
+            
+            <h2>Compatibility with Browsers and Assistive Technology</h2>
+            <p>The Accessibility Case Toolkit is designed to be compatible with the following assistive technologies:</p>
+            <ul>
+              <li>Screen readers (including NVDA, JAWS, VoiceOver, and TalkBack)</li>
+              <li>Screen magnification software</li>
+              <li>Speech recognition software</li>
+              <li>Keyboard-only navigation</li>
+            </ul>
+            <p>The site is designed to be compatible with current versions of:</p>
+            <ul>
+              <li>Chrome and Chrome for Android</li>
+              <li>Firefox</li>
+              <li>Safari and iOS Safari</li>
+              <li>Edge</li>
+              <li>Opera</li>
+            </ul>
+            
+            <h2>Assessment Approach</h2>
+            <p>We assessed this site's accessibility using the following approaches:</p>
+            <ul>
+              <li>Self-evaluation</li>
+              <li>External accessibility evaluation</li>
+              <li>Automated testing using accessibility tools</li>
+              <li>User testing with assistive technologies</li>
+            </ul>
+            <p>This statement was created on March 26, 2025 and was last updated on March 26, 2025.</p>
+          </div>
+        </article>
+      </main>
+    </div>
+    
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h2 class="footer-heading">Accessibility Case Toolkit</h2>
+          <p>A toolkit for implementing accessibility in your projects and making the business, legal, and technical case for accessibility.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Links</h2>
+          <ul class="footer-links">
+            <li><a href="/accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="https://github.com/accessibility-toolkit" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h2 class="footer-heading">Feedback</h2>
+          <p>Found an issue or have a suggestion? <a href="https://github.com/accessibility-toolkit/issues/new" target="_blank" rel="noopener noreferrer">Submit feedback on GitHub</a>.</p>
+        </div>
+      </div>
+      
+      <div class="footer-meta">
+        <p>Last updated: March 26, 2025</p>
+        <p>&copy; 2025 Accessibility Case Toolkit. <span class="license">Content available under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> unless otherwise noted.</span></p>
+      </div>
+    </footer>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/theme-switcher.js" defer></script>
+  <script src="/assets/js/navigation.js" defer></script>
+</body>
+</html>

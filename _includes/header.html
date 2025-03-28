@@ -1,0 +1,28 @@
+<header class="site-header" role="banner">
+  <div class="header-container">
+    <div class="site-title">
+      <a href="{{ '/' | relative_url }}" aria-label="Home">{{ site.title }}</a>
+    </div>
+    
+    <div class="theme-controls">
+      <label for="theme-select" class="visually-hidden">Choose theme</label>
+      <select id="theme-select" aria-label="Select theme">
+        <option value="default">Default theme</option>
+        <option value="dark">Dark mode</option>
+        <option value="quiet">Quiet mode</option>
+        <option value="high-contrast">High contrast</option>
+      </select>
+      
+      <div class="theme-buttons" role="radiogroup" aria-label="Theme options">
+        <button id="theme-default" class="theme-button" aria-label="Default theme" data-theme="default" role="radio" aria-checked="true">A</button>
+        <button id="theme-dark" class="theme-button" aria-label="Dark mode" data-theme="dark" role="radio" aria-checked="false">A</button>
+        <button id="theme-quiet" class="theme-button" aria-label="Quiet mode" data-theme="quiet" role="radio" aria-checked="false">A</button>
+        <button id="theme-high-contrast" class="theme-button" aria-label="High contrast mode" data-theme="high-contrast" role="radio" aria-checked="false">A</button>
+      </div>
+    </div>
+    
+    <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation menu">
+      <span class="menu-icon"></span>
+    </button>
+  </div>
+</header>
