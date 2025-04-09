@@ -5,7 +5,7 @@ import os
 PORT = 80
 
 # Serve files from the static directory
-class Handler(SimpleHTTPRequestHandler):
+""" class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         static_dir = os.path.join(os.getcwd(), 'static')
         super().__init__(*args, directory=static_dir, **kwargs)
@@ -15,7 +15,7 @@ class Handler(SimpleHTTPRequestHandler):
         content_type = SimpleHTTPRequestHandler.guess_type(self, path)
         if str(path).endswith('.md'):
             content_type = 'text/markdown'
-        return content_type
+        return content_type """
 
 # Create the server
 httpd = HTTPServer(('0.0.0.0', PORT), Handler)
